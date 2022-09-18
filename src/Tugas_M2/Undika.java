@@ -3,13 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Tugas_M2;
-
 /**
  *
  * @author naufal
  */
 public class Undika {
-    // atribut
     private String nama, alamat;
 
     // setter
