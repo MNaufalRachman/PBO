@@ -11,7 +11,7 @@ public class Karyawan {
     private String nik, bagian;
     private int kehadiran, gaji_per_hari, totalGaji;
 
-    // setter
+    //setter
     public void setNIK(String nik) {
         this.nik = nik;
     }
@@ -28,7 +28,7 @@ public class Karyawan {
         gaji_per_hari = gajiperhari;
     }
 
-    // getter
+    //getter
     public String getNIK() {
         return this.nik;
     }

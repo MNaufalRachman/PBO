@@ -10,7 +10,7 @@ package Tugas_M2;
 public class Undika {
     private String nama, alamat;
 
-    // setter
+    //setter
     public void setNama(String nama) {
         this.nama = nama;
     }
@@ -19,7 +19,7 @@ public class Undika {
         this.alamat = alamat;
     }
 
-    // getter
+    //getter
     public String getNama() {
         return this.nama;
     }

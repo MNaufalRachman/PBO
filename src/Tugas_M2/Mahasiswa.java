@@ -11,7 +11,7 @@ public class Mahasiswa {
     private String nim, prodi;
     private int spp, angkatan, semester, bayar_spp_semester;
 
-    // setter
+    //setter
     public void setNim(String nim) {
         this.nim = nim;
     }
@@ -36,7 +36,7 @@ public class Mahasiswa {
         this.semester = semester;
     }
 
-    // getter
+    //getter
     public String getNim() {
         return this.nim;
     }
@@ -53,7 +53,7 @@ public class Mahasiswa {
         return this.semester;
     }
 
-    // custom
+    //custom
     public int getSPP() {
         bayar_spp_semester = this.spp * getSemester();
         return this.bayar_spp_semester;
