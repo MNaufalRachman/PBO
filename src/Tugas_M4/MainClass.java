@@ -10,7 +10,7 @@ public class MainClass {
     public static void main(String[] args) {
         
         String ulang, tglKembali = "";
-        int p = 0;
+        int u = 0;
         
         try {
             do {
@@ -27,8 +27,8 @@ public class MainClass {
                 System.out.print("Tanggal Berangkat : ");
                 String tglBerangkat = br.readLine();
                 System.out.print("Pesan Pulang Pergi? (Y/N): ");
-                String pp = br.readLine();
-                if (pp.equalsIgnoreCase("Y")) {
+                String p = br.readLine();
+                if (p.equalsIgnoreCase("Y")) {
                     System.out.print("Tanggal Kembali: ");
                     tglKembali = br.readLine();
                 }
@@ -39,7 +39,7 @@ public class MainClass {
                 int pilih = Integer.parseInt(br.readLine());
                 switch (pilih) {
                     case 1:
-                        Lion_Air lion[] = new Lion_Air[jmlPenumpang];
+                        Lion_Air la[] = new Lion_Air[jmlPenumpang];
                         System.out.println("\n-- Selamat Datang di Lion Air --");
                         System.out.println("Silahkan isi data penumpang");
                         for (int i = 0; i < jmlPenumpang; i++) {
@@ -55,68 +55,63 @@ public class MainClass {
                             String noPesawat = br.readLine();
                             System.out.print("No Kursi : ");
                             String noKursi = br.readLine();
-                            lion[i] = new Lion_Air(bookingID, nik, nama, kelamin, tglBerangkat, tglKembali, kotaAsal, kotaTujuan, noPesawat, noKursi, jmlPenumpang);
+                            la[i] = new Lion_Air(bookingID, nik, nama, kelamin, tglBerangkat, tglKembali, kotaAsal, kotaTujuan, noPesawat, noKursi, jmlPenumpang);
                         }
 
-                        // Print
                         for (int i = 0; i < jmlPenumpang; i++) {
                             System.out.print("\nPreview Tiket Lion Air");
-                            System.out.println("\n=========================");
-                            System.out.println("Booking ID: " + lion[i].getBookingID());
-                            System.out.println("NIK: " + lion[i].getNik());
-                            System.out.println("Nama: " + lion[i].getNama());
-                            System.out.println("Kota Asal: " + lion[i].getKotaAsal());
-                            System.out.println("Kota Tujuan: " + lion[i].getKotaTujuan());
-                            System.out.println("Tanggal Berangkat: " + lion[i].getTglBerangkat());
-                            System.out.println("Tanggal Kembali: " + lion[i].getTglKembali());
-                            System.out.println("No. Pesawat: " + lion[i].getNoPesawat());
-                            System.out.println("No. Kursi: " + lion[i].getNoKursi());
-                            System.out.println("Harga Tiket: " + lion[i].getHarga() + "\n\n");
+                            System.out.println("\n======================");
+                            System.out.println("Booking ID: " + la[i].getBookingID());
+                            System.out.println("NIK: " + la[i].getNik());
+                            System.out.println("Nama: " + la[i].getNama());
+                            System.out.println("Kota Asal: " + la[i].getKotaAsal());
+                            System.out.println("Kota Tujuan: " + la[i].getKotaTujuan());
+                            System.out.println("Tanggal Berangkat: " + la[i].getTglBerangkat());
+                            System.out.println("Tanggal Kembali: " + la[i].getTglKembali());
+                            System.out.println("Nomor Pesawat: " + la[i].getNoPesawat());
+                            System.out.println("Nomor Kursi: " + la[i].getNoKursi());
+                            System.out.println("Harga Tiket: " + la[i].getHarga());
                         }
-
-                        p = jmlPenumpang - 1;
-                        System.out.println("Total: " + lion[p].getTotal());
+                        u = jmlPenumpang - 1;
+                        System.out.println("\nTotal: " + la[u].getTotal());
                         break;
 
                     case 2:
-                        Citilink citilink[] = new Citilink[jmlPenumpang];
-                        System.out.println("======== Selamat Datang di Citilink ========");
+                        Citilink citi[] = new Citilink[jmlPenumpang];
+                        System.out.println("-- Selamat Datang di Citilink --");
                         System.out.println("Silahkan isi data penumpang");
                         for (int i = 0; i < jmlPenumpang; i++) {
-                            System.out.print("Booking ID: ");
+                            System.out.print("Booking ID : ");
                             String bookingID = br.readLine();
-                            System.out.print("NIK: ");
+                            System.out.print("NIK : ");
                             String nik = br.readLine();
-                            System.out.print("Nama: ");
+                            System.out.print("Nama : ");
                             String nama = br.readLine();
-                            System.out.print("Jenis Kelamin (L/P): ");
+                            System.out.print("Jenis Kelamin (P/L) : ");
                             String kelamin = br.readLine();
-                            System.out.print("No. Pesawat: ");
+                            System.out.print("No Pesawat : ");
                             String noPesawat = br.readLine();
-                            System.out.print("No. Kursi: ");
+                            System.out.print("No Kursi : ");
                             String noKursi = br.readLine();
-                            System.out.println();
-                            citilink[i] = new Citilink(bookingID, nik, nama, kelamin, tglBerangkat, tglKembali, kotaAsal, kotaTujuan, noPesawat, noKursi, jmlPenumpang);
-                        }
-                            
-                        // Print
-                        for (int i = 0; i < jmlPenumpang; i++) {
-                            System.out.print("\n\nPreview Tiket Citilink");
-                            System.out.println("\n====================================================");
-                            System.out.println("Booking ID: " + citilink[i].getBookingID());
-                            System.out.println("NIK: " + citilink[i].getNik());
-                            System.out.println("Nama: " + citilink[i].getNama());
-                            System.out.println("Kota Asal: " + citilink[i].getKotaAsal());
-                            System.out.println("Kota Tujuan: " + citilink[i].getKotaTujuan());
-                            System.out.println("Tanggal Berangkat: " + citilink[i].getTglBerangkat());
-                            System.out.println("Tanggal Kembali: " + citilink[i].getTglKembali());
-                            System.out.println("No. Pesawat: " + citilink[i].getNoPesawat());
-                            System.out.println("No. Kursi: " + citilink[i].getNoKursi());
-                            System.out.println("Harga Tiket: " + citilink[i].getHarga());
+                            citi[i] = new Citilink(bookingID, nik, nama, kelamin, tglBerangkat, tglKembali, kotaAsal, kotaTujuan, noPesawat, noKursi, jmlPenumpang);
                         }
                         
-                        p = jmlPenumpang - 1;
-                        System.out.println("\nTotal: " + citilink[p].getTotal());
+                        for (int i = 0; i < jmlPenumpang; i++) {
+                            System.out.print("\nPreview Tiket Citilink");
+                            System.out.println("\n=======================");
+                            System.out.println("Booking ID: " + citi[i].getBookingID());
+                            System.out.println("NIK: " + citi[i].getNik());
+                            System.out.println("Nama: " + citi[i].getNama());
+                            System.out.println("Kota Asal: " + citi[i].getKotaAsal());
+                            System.out.println("Kota Tujuan: " + citi[i].getKotaTujuan());
+                            System.out.println("Tanggal Berangkat: " + citi[i].getTglBerangkat());
+                            System.out.println("Tanggal Kembali: " + citi[i].getTglKembali());
+                            System.out.println("Nomor Pesawat: " + citi[i].getNoPesawat());
+                            System.out.println("Nomor Kursi: " + citi[i].getNoKursi());
+                            System.out.println("Harga Tiket: " + citi[i].getHarga());
+                        }
+                        u = jmlPenumpang - 1;
+                        System.out.println("\nTotal: " + citi[u].getTotal());
                         break;
 
                     default:
@@ -135,93 +130,86 @@ public class MainClass {
                     tglKembali = br.readLine();
                 }
 
-                System.out.println("======== PILIH MASKAPAI ========");
-                System.out.println("1. Lion Air\n2. Citilink");
-                System.out.print("\nPilih Maskapai: ");
+                System.out.println("\n-- Pilih Maskapai --");
+                System.out.println("1. Lion Air \n2. Citilink");
+                System.out.print("Pilih Maskapai: ");
                 int pilih = Integer.parseInt(br.readLine());
                 switch (pilih) {
                     case 1:
-                        Lion_Air lion[] = new Lion_Air[jmlPenumpang];
-
-                        System.out.println("======== Selamat Datang di Lion Air ========");
+                        Lion_Air la[] = new Lion_Air[jmlPenumpang];
+                        System.out.println("\n-- Selamat Datang di Lion Air --");
                         System.out.println("Silahkan isi data penumpang");
                         for (int i = 0; i < jmlPenumpang; i++) {
-                            System.out.print("Booking ID: ");
+                            System.out.print("Booking ID : ");
                             String bookingID = br.readLine();
-                            System.out.print("NIK: ");
+                            System.out.print("NIK : ");
                             String nik = br.readLine();
-                            System.out.print("Nama: ");
+                            System.out.print("Nama : ");
                             String nama = br.readLine();
-                            System.out.print("Jenis Kelamin (L/P): ");
+                            System.out.print("Jenis Kelamin (P/L) : ");
                             String kelamin = br.readLine();
-                            System.out.print("No. Pesawat: ");
+                            System.out.print("No Pesawat : ");
                             String noPesawat = br.readLine();
-                            System.out.print("No. Kursi: ");
+                            System.out.print("No Kursi : ");
                             String noKursi = br.readLine();
-                            System.out.println("");
-                            lion[i] = new Lion_Air(bookingID, nik, nama, kelamin, tglBerangkat, tglKembali, kotaAsal, kotaTujuan, noPesawat, noKursi, jmlPenumpang);
+                            la[i] = new Lion_Air(bookingID, nik, nama, kelamin, tglBerangkat, tglKembali, kotaAsal, kotaTujuan, noPesawat, noKursi, jmlPenumpang);
                         }
 
-                        // Print
                         for (int i = 0; i < jmlPenumpang; i++) {
                             System.out.print("\nPreview Tiket Lion Air");
-                            System.out.println("\n====================================================");
-                            System.out.println("Booking ID: " + lion[i].getBookingID());
-                            System.out.println("NIK: " + lion[i].getNik());
-                            System.out.println("Nama: " + lion[i].getNama());
-                            System.out.println("Kota Asal: " + lion[i].getKotaAsal());
-                            System.out.println("Kota Tujuan: " + lion[i].getKotaTujuan());
-                            System.out.println("Tanggal Berangkat: " + lion[i].getTglBerangkat());
-                            System.out.println("Tanggal Kembali: " + lion[i].getTglKembali());
-                            System.out.println("No. Pesawat: " + lion[i].getNoPesawat());
-                            System.out.println("No. Kursi: " + lion[i].getNoKursi());
-                            System.out.println("Harga Tiket: " + lion[i].getHarga());
+                            System.out.println("\n======================");
+                            System.out.println("Booking ID: " + la[i].getBookingID());
+                            System.out.println("NIK: " + la[i].getNik());
+                            System.out.println("Nama: " + la[i].getNama());
+                            System.out.println("Kota Asal: " + la[i].getKotaAsal());
+                            System.out.println("Kota Tujuan: " + la[i].getKotaTujuan());
+                            System.out.println("Tanggal Berangkat: " + la[i].getTglBerangkat());
+                            System.out.println("Tanggal Kembali: " + la[i].getTglKembali());
+                            System.out.println("Nomor Pesawat: " + la[i].getNoPesawat());
+                            System.out.println("Nomor Kursi: " + la[i].getNoKursi());
+                            System.out.println("Harga Tiket: " + la[i].getHarga());
                         }
-
-                        p = jmlPenumpang - 1;
-                        System.out.println("\nTotal: " + lion[p].getTotal());
+                        u = jmlPenumpang - 1;
+                        System.out.println("\nTotal: " + la[u].getTotal());
                         break;
 
                     case 2:
-                        Citilink citilink[] = new Citilink[jmlPenumpang];
-
-                        System.out.println("======== Selamat Datang di Citilink ========");
+                        Citilink citi[] = new Citilink[jmlPenumpang];
+                        System.out.println("-- Selamat Datang di Citilink --");
                         System.out.println("Silahkan isi data penumpang");
                         for (int i = 0; i < jmlPenumpang; i++) {
-                            System.out.print("Booking ID: ");
+                            System.out.print("Booking ID : ");
                             String bookingID = br.readLine();
-                            System.out.print("NIK: ");
+                            System.out.print("NIK : ");
                             String nik = br.readLine();
-                            System.out.print("Nama: ");
+                            System.out.print("Nama : ");
                             String nama = br.readLine();
-                            System.out.print("Jenis Kelamin (L/P): ");
+                            System.out.print("Jenis Kelamin (P/L) : ");
                             String kelamin = br.readLine();
-                            System.out.print("No. Pesawat: ");
+                            System.out.print("No Pesawat : ");
                             String noPesawat = br.readLine();
-                            System.out.print("No. Kursi: ");
+                            System.out.print("No Kursi : ");
                             String noKursi = br.readLine();
-                            System.out.println();
-                            citilink[i] = new Citilink(bookingID, nik, nama, kelamin, tglBerangkat, tglKembali, kotaAsal, kotaTujuan, noPesawat, noKursi, jmlPenumpang);
+                            citi[i] = new Citilink(bookingID, nik, nama, kelamin, tglBerangkat, tglKembali, kotaAsal, kotaTujuan, noPesawat, noKursi, jmlPenumpang);
                         }
-
-                        // Print
+                        
                         for (int i = 0; i < jmlPenumpang; i++) {
                             System.out.print("\nPreview Tiket Citilink");
-                            System.out.println("\n====================================================");
-                            System.out.println("Booking ID: " + citilink[i].getBookingID());
-                            System.out.println("NIK: " + citilink[i].getNik());
-                            System.out.println("Nama: " + citilink[i].getNama());
-                            System.out.println("Kota Asal: " + citilink[i].getKotaAsal());
-                            System.out.println("Kota Tujuan: " + citilink[i].getKotaTujuan());
-                            System.out.println("Tanggal Berangkat: " + citilink[i].getTglBerangkat());
-                            System.out.println("Tanggal Kembali: " + citilink[i].getTglKembali());
-                            System.out.println("No. Pesawat: " + citilink[i].getNoPesawat());
-                            System.out.println("No. Kursi: " + citilink[i].getNoKursi());
-                            System.out.println("Harga Tiket: " + citilink[i].getHarga() );
+                            System.out.println("\n=======================");
+                            System.out.println("Booking ID: " + citi[i].getBookingID());
+                            System.out.println("NIK: " + citi[i].getNik());
+                            System.out.println("Nama: " + citi[i].getNama());
+                            System.out.println("Kota Asal: " + citi[i].getKotaAsal());
+                            System.out.println("Kota Tujuan: " + citi[i].getKotaTujuan());
+                            System.out.println("Tanggal Berangkat: " + citi[i].getTglBerangkat());
+                            System.out.println("Tanggal Kembali: " + citi[i].getTglKembali());
+                            System.out.println("Nomor Pesawat: " + citi[i].getNoPesawat());
+                            System.out.println("Nomor Kursi: " + citi[i].getNoKursi());
+                            System.out.println("Harga Tiket: " + citi[i].getHarga());
                         }
-
-                        p = jmlPenumpang - 1;
-                        System.out.println("\nTotal: " + citilink[p].getTotal());
+                        
+                        u = jmlPenumpang - 1;
+                        System.out.println("\nTotal: " + citi[u].getTotal());
                         break;
 
                     default:
