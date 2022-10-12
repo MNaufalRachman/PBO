@@ -32,6 +32,9 @@ public class MainClass {
                     System.out.print("Tanggal Kembali: ");
                     tglKembali = br.readLine();
                 }
+                else if (p.equalsIgnoreCase("N")) {
+                    tglKembali  = "";
+                }
 
                 System.out.println("\n-- Pilih Maskapai --");
                 System.out.println("1. Lion Air \n2. Citilink");
@@ -128,6 +131,9 @@ public class MainClass {
                 if (pp.equalsIgnoreCase("Y")) {
                     System.out.print("Tanggal Kembali: ");
                     tglKembali = br.readLine();
+                }
+                else if (pp.equalsIgnoreCase("N")) {
+                    tglKembali  = "";
                 }
 
                 System.out.println("\n-- Pilih Maskapai --");
